@@ -1,0 +1,13 @@
+.addTodo {
+  padding: 10px;
+  margin: 10px;
+  /* border: 1px solid rebeccapurple; */
+  width: 400px;
+}
+
+.addTodo h2 {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rebeccapurple;
+  margin-bottom: 15px;
+}

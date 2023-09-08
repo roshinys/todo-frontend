@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import Auth from "./Components/Auth/Auth";
+import AlertNofication from "./Components/UI/AlertNotification";
+import { useSelector } from "react-redux";
+import Todo from "./Components/Todo/Todo";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navigate to="/todo" />,
+  },
+  {
+    path: "/auth",
+    element: <Auth />,
+  },
+  {
+    path: "/todo",
+    element: (
+      <RequireAuth redirectTo="/auth">
+        <Todo />
+      </RequireAuth>
+    ),
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={router} />
+      <AlertNofication />
+    </>
+  );
+}
+
+function RequireAuth(props) {
+  const token = useSelector((state) => state.auth.token);
+  return token !== undefined && token !== null ? (
+    props.children
+  ) : (
+    <Navigate to={props.redirectTo} />
   );
 }
 

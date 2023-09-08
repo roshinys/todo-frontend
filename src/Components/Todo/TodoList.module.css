@@ -1,0 +1,18 @@
+.todoListDiv {
+  border: 1px solid rebeccapurple;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+}
+
+.todoListDiv h2 {
+  border-bottom: 1px solid black;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
