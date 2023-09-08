@@ -42,6 +42,7 @@ function AddTodo() {
       };
       dispatch(updateTodoServer(updatedData, token, false));
     }
+    setTitle("");
   };
 
   return (

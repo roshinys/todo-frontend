@@ -3,3 +3,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.completed {
+  color: rebeccapurple;
+}
+
+@media (max-width: 768px) {
+  .todoItem span {
+    width: 30px;
+  }
+}

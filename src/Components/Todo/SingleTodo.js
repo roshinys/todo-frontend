@@ -46,15 +46,21 @@ function SingleTodo({ todo }) {
       <div className={styles.todoItem}>
         <input type="checkbox" checked={check} onChange={changeStatusHandler} />
         <span className={styles.title}>{todo.title}</span>
-        <span className={styles.status}>
-          status:{todo.completed === false ? "Active" : "Completed"}
+        <span
+          className={`${styles.status} ${
+            todo.completed ? styles.completed : styles.active
+          }`}
+        >
+          {todo.completed === false ? "Active" : "Completed"}
         </span>
-        <IconButton onClick={editTodoHandler}>
-          <EditIcon />
-        </IconButton>
-        <IconButton onClick={deleteTodoHandler}>
-          <DeleteIcon />
-        </IconButton>
+        <div>
+          <IconButton onClick={editTodoHandler}>
+            <EditIcon />
+          </IconButton>
+          <IconButton onClick={deleteTodoHandler}>
+            <DeleteIcon />
+          </IconButton>
+        </div>
       </div>
     </Item>
   );

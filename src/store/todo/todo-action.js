@@ -19,8 +19,12 @@ export const addTodoToServer = (todo, token) => {
         throw new Error(data?.message);
       } else {
         const { todo } = data;
-        console.log(todo);
         dispatch(todoActions.addTodo({ todo: todo }));
+        dispatch(
+          alertActions.setAlert({
+            content: data.message,
+          })
+        );
       }
     } catch (err) {
       dispatch(
@@ -91,6 +95,11 @@ export const updateTodoServer = (
         } else {
           dispatch(todoActions.removeEdit());
         }
+        dispatch(
+          alertActions.setAlert({
+            content: data.message,
+          })
+        );
       }
     } catch (err) {
       dispatch(
@@ -118,6 +127,11 @@ export const deleteTodoServer = (todoId, token) => {
         throw new Error(data?.message);
       } else {
         dispatch(todoActions.delTodo({ todoId }));
+        dispatch(
+          alertActions.setAlert({
+            content: data.message,
+          })
+        );
       }
     } catch (err) {
       dispatch(

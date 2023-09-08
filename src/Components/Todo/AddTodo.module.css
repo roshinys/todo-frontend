@@ -11,3 +11,11 @@
   border-bottom: 1px solid rebeccapurple;
   margin-bottom: 15px;
 }
+@media (max-width: 768px) {
+  .addTodo {
+    width: 200px;
+  }
+  .addTodo h2 {
+    font-size: 18px;
+  }
+}

@@ -13,7 +13,9 @@ const todoSlice = createSlice({
   },
   reducers: {
     addTodo(state, action) {
-      state.todos.push(action.payload.todo);
+      if (state.todos.length <= 3) {
+        state.todos.push(action.payload.todo);
+      }
     },
     getTodo(state, action) {
       state.todos = action.payload.todos;
