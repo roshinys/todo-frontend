@@ -12,13 +12,6 @@
   padding: 10px;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-}
-
 @media (max-width: 768px) {
   .todoListDiv {
     width: 300px;

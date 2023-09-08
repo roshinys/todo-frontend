@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTodoFromServer } from "../../store/todo/todo-action";
 import SingleTodo from "./SingleTodo";
 import styles from "./TodoList.module.css";
-import { IconButton, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { todoActions } from "../../store/todo/todo-slice";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import TodoPagination from "../UI/TodoPagination";
 
 function TodoList() {
   const token = useSelector((state) => state.auth.token);
@@ -35,7 +34,14 @@ function TodoList() {
               return <SingleTodo key={todo._id} todo={todo} />;
             })}
           </Stack>
-          <div className={styles.pagination}>
+          <TodoPagination
+            onPrevChange={handlePrevPageChange}
+            onNextChange={handleNextPageChange}
+            hasNext={hasNext}
+            hasPrev={hasPrev}
+            page={page}
+          />
+          {/* <div className={styles.pagination}>
             {hasPrev && (
               <IconButton onClick={handlePrevPageChange}>
                 <ArrowBackIosIcon />
@@ -47,7 +53,7 @@ function TodoList() {
                 <NavigateNextIcon />
               </IconButton>
             )}
-          </div>
+          </div> */}
         </>
       )}
     </div>
