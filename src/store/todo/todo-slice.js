@@ -39,7 +39,7 @@ const todoSlice = createSlice({
       state.isEdit = true;
     },
     removeEdit(state, action) {
-      state.editTodo = "";
+      state.editTodo = {};
       state.isEdit = false;
     },
     changePage(state, action) {
