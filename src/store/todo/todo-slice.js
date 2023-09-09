@@ -8,7 +8,7 @@ const todoSlice = createSlice({
     hasNext: true,
     page: 1,
     quantity: 3,
-    editTodo: "",
+    editTodo: {},
     isEdit: false,
   },
   reducers: {
