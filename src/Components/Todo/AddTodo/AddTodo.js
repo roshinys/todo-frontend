@@ -3,11 +3,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import styles from "./AddTodo.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { alertActions } from "../../store/alert/alert-slice";
 import {
   addTodoToServer,
   updateTodoServer,
-} from "../../store/todo/todo-action";
+} from "../../../store/todo/todo-action";
+import { alertActions } from "../../../store/alert/alert-slice";
 
 function AddTodo() {
   const { isEdit, editTodo } = useSelector((state) => state.todos);

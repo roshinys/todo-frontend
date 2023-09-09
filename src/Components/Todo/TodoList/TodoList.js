@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTodoFromServer } from "../../store/todo/todo-action";
-import SingleTodo from "./SingleTodo";
+import { getTodoFromServer } from "../../../store/todo/todo-action";
 import styles from "./TodoList.module.css";
 import { Stack } from "@mui/material";
-import { todoActions } from "../../store/todo/todo-slice";
-import TodoPagination from "../UI/TodoPagination";
+import TodoPagination from "../../UI/TodoPagination/TodoPagination";
+import { todoActions } from "../../../store/todo/todo-slice";
+import SingleTodo from "../SingleTodo/SingleTodo";
 
 function TodoList() {
   const token = useSelector((state) => state.auth.token);
@@ -41,19 +41,6 @@ function TodoList() {
             hasPrev={hasPrev}
             page={page}
           />
-          {/* <div className={styles.pagination}>
-            {hasPrev && (
-              <IconButton onClick={handlePrevPageChange}>
-                <ArrowBackIosIcon />
-              </IconButton>
-            )}
-            <IconButton>{page}</IconButton>
-            {hasNext && (
-              <IconButton onClick={handleNextPageChange}>
-                <NavigateNextIcon />
-              </IconButton>
-            )}
-          </div> */}
         </>
       )}
     </div>

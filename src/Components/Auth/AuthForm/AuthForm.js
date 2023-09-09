@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
-import { alertActions } from "../../store/alert/alert-slice";
+import { alertActions } from "../../../store/alert/alert-slice";
 
 function AuthForm(props) {
   const dispatch = useDispatch();

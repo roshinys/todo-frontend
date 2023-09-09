@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, Snackbar } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { alertActions } from "../../store/alert/alert-slice";
+import { alertActions } from "../../../store/alert/alert-slice";
 
 function AlertNofication() {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
 import React from "react";
-import AddTodo from "./AddTodo";
-import TodoList from "./TodoList";
 import styles from "./Todo.module.css";
-import Logout from "../Auth/Logout";
+import Logout from "../Auth/Logout/Logout";
+import AddTodo from "./AddTodo/AddTodo";
+import TodoList from "./TodoList/TodoList";
 
 function Todo() {
   return (

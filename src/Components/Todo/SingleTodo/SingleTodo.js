@@ -3,12 +3,14 @@ import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import styles from "./SingleTodo.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateTodoServer } from "../../store/todo/todo-action";
+import {
+  deleteTodoServer,
+  updateTodoServer,
+} from "../../../store/todo/todo-action";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { deleteTodoServer } from "../../store/todo/todo-action";
-import { todoActions } from "../../store/todo/todo-slice";
+import { todoActions } from "../../../store/todo/todo-slice";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

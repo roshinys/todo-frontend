@@ -4,9 +4,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import Auth from "./Components/Auth/Auth";
-import AlertNofication from "./Components/UI/AlertNotification";
 import { useSelector } from "react-redux";
 import Todo from "./Components/Todo/Todo";
+import AlertNofication from "./Components/UI/AlertNotification/AlertNotification";
 
 const router = createBrowserRouter([
   {

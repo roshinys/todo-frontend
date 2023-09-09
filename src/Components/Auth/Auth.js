@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AuthBox from "../Auth/AuthBox";
-import AuthWrapper from "../Auth/AuthWrapper";
-import AuthForm from "../Auth/AuthForm";
+import AuthBox from "./AuthBox/AuthBox";
+import AuthWrapper from "./AuthWrapper/AuthWrapper";
+import AuthForm from "./AuthForm/AuthForm";
 import styles from "./Auth.module.css";
 import { useDispatch } from "react-redux";
 import { authUser } from "../../store/auth/auth-action";
